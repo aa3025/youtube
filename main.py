@@ -8,7 +8,7 @@ url = "https://youtube.com/playlist?list=PLiN-7mukU_REPaZRXd62NKx1zoFXLnIRe"
 # beginning and end of playlist items to download (Also: set download_full_playlist=False below)
 playlist_start = '1'
 playlist_end = '2'
-download_full_playlist= False # set to True to get all items instead
+download_full_playlist = True # set to True to get all items instead
 destination = '~/Music' # parent folder to save to (leave empty to save in the current folder)
 
 quality = "192K" # mp3 quality to save audio files
