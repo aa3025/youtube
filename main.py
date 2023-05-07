@@ -5,7 +5,7 @@ url = "https://youtube.com/playlist?list=PLiN-7mukU_REPaZRXd62NKx1zoFXLnIRe" #@p
 # beginning and end of playlist items to download (Also: set download_full_playlist=False below)
 playlist_start = '1'
 playlist_end = '2'
-download_full_playlist= False
+download_full_playlist= False # set to True to get all items instead
 
 quality = "192K"
 playlist_album = "Blade Runner"
