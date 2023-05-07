@@ -1,4 +1,4 @@
-# This is a sample Python script.
+# This is a Python script to download YouTube playlist into a folder as mp4 or mp3 files.
 import os
 url = "https://youtube.com/playlist?list=PLiN-7mukU_REPaZRXd62NKx1zoFXLnIRe" #@param {type:"string"}
 
