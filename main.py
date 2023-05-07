@@ -3,17 +3,17 @@
 # requires ffmpeg installed on the system
 
 ################ edit params here ###############
-url = "https://youtube.com/playlist?list=PL15ty5GYCv5u0_w7pusvZtUP225slLmRT"
+url = "https://youtube.com/playlist?list=1234567"
 
 # beginning and end of playlist items to download (Also: set download_full_playlist=False below)
 playlist_start = '1'
-playlist_end = '1'
+playlist_end = '2'
 download_full_playlist = True # set to True to get all items instead
 destination = '~/Music' # parent folder to save to (leave empty (i.e. '') to save in the current folder)
 
 quality = "192K" # mp3 quality to save audio files
-playlist_album = 'Dangerous'
-playlist_artist = 'Michael Jackson'
+playlist_album = 'Album Title'
+playlist_artist = 'Artist Name'
 playlist_year = '1993'
 
 title = playlist_album.replace(" ", "_")
