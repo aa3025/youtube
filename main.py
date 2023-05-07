@@ -1,6 +1,6 @@
 # This is a Python script to download YouTube playlist into a folder as mp4 or mp3 files.
 import os
-url = "https://youtube.com/playlist?list=PLiN-7mukU_REPaZRXd62NKx1zoFXLnIRe" #@param {type:"string"}
+url = "https://youtube.com/playlist?list=PLiN-7mukU_REPaZRXd62NKx1zoFXLnIRe"
 
 # beginning and end of playlist items to download (Also: set download_full_playlist=False below)
 playlist_start = '1'
@@ -15,7 +15,7 @@ title = playlist_album.replace(" ", "_")
 download_videos = True
 remove_everything = True
 
-os.system('pip install yt-dlp mutagen')
+os.system('pip install yt-dlp mutagen numpy')
 
 if remove_everything:
     os.system('rm -fr *.webm; rm -fr *.mp*')
