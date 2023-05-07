@@ -3,6 +3,7 @@
 # requires ffmpeg installed on the system
 
 ################ edit params here ###############
+# *** PLAYLIST *** URL !! #
 url = "https://youtube.com/playlist?list=1234567"
 
 # beginning and end of playlist items to download (Also: set download_full_playlist=False below)
