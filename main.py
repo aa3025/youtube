@@ -1,25 +1,24 @@
 # This is a sample Python script.
 import os
-#@title Video + Playlist Downloader { vertical-output: true }
 url = "https://youtube.com/playlist?list=PLiN-7mukU_REPaZRXd62NKx1zoFXLnIRe" #@param {type:"string"}
-# max_filesize_mb = 1000 #@param { type: 'slider', min: 1, max: 1000}
+
+# beginning and end of playlist items to download (Also: set download_full_playlist=False below)
 playlist_start = '1'
 playlist_end = '2'
+download_full_playlist= True
 
-quality = "192K" #@param { type: "string" }
-playlist_album = "Blade Runner" #@param { type: "string" }
-playlist_artist = "Vangelis" #@param { type: "string" }
-download_videos = False #@param { type: 'boolean' }
-
-remove_everything = True #@param { type: 'boolean' }
-download_full_playlist= False #@param { type: 'boolean' }
-start_downloading_immediately = True #@param { type: 'boolean' }
-
-zipname = playlist_album.replace(" ", "_") + ".zip"
+quality = "192K"
+playlist_album = "Blade Runner"
+playlist_artist = "Vangelis"
 title = playlist_album.replace(" ", "_")
 
+download_videos = False
+remove_everything = True 
+
 os.system('pip install yt-dlp mutagen')
-os.system('rm -fr *.webm; rm -fr *.mp3')
+
+if remove_everything:
+    os.system('rm -fr *.webm; rm -fr *.mp*')
 
 #Download videos?:###############
 
@@ -36,6 +35,7 @@ else:
 
 print(cmd)
 os.system(cmd)
+
 # TAGGING MP3s ###################################
 
 from mutagen.mp3 import MP3
@@ -67,7 +67,4 @@ for i in np.arange(0, len (filez)):
 	# save the changes that we've made
 	mp3file.save()
 
-os.system('mkdir -p ' + title + '; mv *.mp3 ' + title +'/')
-
-########### Zipping and Downloading #################
-os.system('zip  ' + zipname + ' *')
+os.system('mkdir -p ' + title + '; mv *.mp* ' + title +'/')
