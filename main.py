@@ -1,4 +1,4 @@
-# This is a Python script to download YouTube playlist into a folder as mp4 or mp3 files.
+# This is a Python script to download YouTube playlist into a folder as a set of mp4 or mp3 files.
 # Also IDv3-tags the mp3 files
 
 ################ edit params here ###############
