@@ -82,4 +82,16 @@ for i in np.arange(0, len (filez)):
     # save the changes that we've made
     mp3file.save()
 
-os.system('mkdir -p ' + destination + '/' + artist + '/' + title + '; mv *.mp* ' + destination + '/' + artist + '/' + title +'/')
+# Saving to destination
+import platform
+OS = platform.system()
+if OS == 'Windows':
+    os.system('mkdir ' + destination)
+    os.system('mkdir ' + destination + '\' + artist )
+    os.system('mkdir ' + destination + '\' + artist + '\' + title )
+    os.system('move *.mp* ' + '"' + destination + '\' + artist + '\' + title + '\' )
+else:
+    # MacOS or Linux:
+    os.system('mkdir -p ' + destination + '/' + artist + '/' + title + '; mv *.mp* ' + destination + '/' + artist + '/' + title +'/')
+
+
