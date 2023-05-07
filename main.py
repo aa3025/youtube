@@ -4,18 +4,18 @@
 
 ################ edit params here ###############
 # *** PLAYLIST *** URL !! #
-url = "https://youtube.com/playlist?list=1234567"
+url = "https://youtube.com/playlist?list=PLqcSGCnhWgvJrdRJbOOJzXEkKUPrK1DiX"
 
 # beginning and end of playlist items to download (Also: set download_full_playlist=False below)
 playlist_start = '1'
 playlist_end = '2'
-download_full_playlist = True # set to True to get all items instead
+download_full_playlist = False # set to True to get all items instead
 destination = '~/Music' # parent folder to save to (leave empty (i.e. '') to save in the current folder)
 
 quality = "192K" # mp3 quality to save audio files (128K, 160K, 192K, 224K, 256K, 320K)
-playlist_album = 'Album Title'
-playlist_artist = 'Artist Name'
-playlist_year = '1993'
+playlist_album = 'Pop2'
+playlist_artist = 'U2'
+playlist_year = '1997'
 
 title = playlist_album.replace(" ", "_")
 artist = playlist_artist.replace(" ", "_")
@@ -87,11 +87,10 @@ import platform
 OS = platform.system()
 if OS == 'Windows':
     os.system('mkdir ' + destination)
-    os.system('mkdir ' + destination + '\' + artist )
-    os.system('mkdir ' + destination + '\' + artist + '\' + title )
-    os.system('move *.mp* ' + '"' + destination + '\' + artist + '\' + title + '\' )
+    os.system('mkdir ' + destination + '/' + artist)
+    os.system('mkdir ' + destination + '/' + artist + '/' + title)
+    os.system('move *.mp* ' + '"' + destination + '/' + artist + '/' + title + '/')
 else:
     # MacOS or Linux:
-    os.system('mkdir -p ' + destination + '/' + artist + '/' + title + '; mv *.mp* ' + destination + '/' + artist + '/' + title +'/')
-
-
+    os.system('mkdir -p ' + destination + '/' + artist + '/' + title)
+    os.system('mv *.mp* ' + destination + '/' + artist + '/' + title + '/')
