@@ -8,6 +8,7 @@ url = "https://youtube.com/playlist?list=PLiN-7mukU_REPaZRXd62NKx1zoFXLnIRe"
 playlist_start = '1'
 playlist_end = '2'
 download_full_playlist= False # set to True to get all items instead
+destination = '' # parent folder to save to (leave empty to save to current folder)
 
 quality = "192K" # mp3 quality to save audio files
 playlist_album = "Blade Runner"
@@ -15,7 +16,8 @@ playlist_artist = "Vangelis"
 title = playlist_album.replace(" ", "_")
 
 download_videos = True
-remove_everything = True
+remove_everything = True # remove all mp3, mp4, web* files pror to downloading new ones
+
 ##################################################
 
 
@@ -72,4 +74,4 @@ for i in np.arange(0, len (filez)):
 	# save the changes that we've made
 	mp3file.save()
 
-os.system('mkdir -p ' + title + '; mv *.mp* ' + title +'/')
+os.system('mkdir -p ' + destination + '/' + title + '; mv *.mp* ' + destination + '/' + title +'/')
