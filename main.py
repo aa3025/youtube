@@ -5,15 +5,15 @@ url = "https://youtube.com/playlist?list=PLiN-7mukU_REPaZRXd62NKx1zoFXLnIRe" #@p
 # beginning and end of playlist items to download (Also: set download_full_playlist=False below)
 playlist_start = '1'
 playlist_end = '2'
-download_full_playlist= True
+download_full_playlist= False
 
 quality = "192K"
 playlist_album = "Blade Runner"
 playlist_artist = "Vangelis"
 title = playlist_album.replace(" ", "_")
 
-download_videos = False
-remove_everything = True 
+download_videos = True
+remove_everything = True
 
 os.system('pip install yt-dlp mutagen')
 
@@ -24,9 +24,9 @@ if remove_everything:
 
 if download_videos:
     if download_full_playlist:
-        cmd = "yt-dlp " + url + " --format 18"
+        cmd = 'yt-dlp ' + url + ' --format 18'
     else:
-        cmd = "yt-dlp " + url + " --playlist-start {playlist_start} --playlist-end {playlist_end} --format 18"
+        cmd = 'yt-dlp ' + url + ' --playlist-start ' + playlist_start + ' --playlist-end ' + playlist_end + ' --format 18'
 else:
     if download_full_playlist:
         cmd = 'yt-dlp ' + url + ' --ignore-errors --format bestaudio --extract-audio --audio-format mp3 --audio-quality ' + quality + ' --output "%(playlist_index)s - %(title)s.%(ext)s" --yes-playlist'
