@@ -1,5 +1,6 @@
 # This is a Python script to download YouTube playlist into a folder as a set of mp4 or mp3 files.
 # Also IDv3-tags the mp3 files
+# requires ffmpeg installed on the system
 
 ################ edit params here ###############
 url = "https://youtube.com/playlist?list=PLiN-7mukU_REPaZRXd62NKx1zoFXLnIRe"
